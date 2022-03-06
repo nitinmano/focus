@@ -23,16 +23,24 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 
+import ListItemButton from '@mui/material/ListItemButton';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <div>
+      {/* style={{position: "absolute", bottom: "10px", left: "50%"}} */}
+      <Typography className='copyright' variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        Admirals
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+    </div>
   );
 }
 
@@ -111,6 +119,7 @@ function DashboardContent() {
               }}
             >
               <MenuIcon />
+              
             </IconButton>
             <Typography
               component="h1"
@@ -119,10 +128,10 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Focus
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={0} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -137,6 +146,13 @@ function DashboardContent() {
               px: [1],
             }}
           >
+            <Typography >
+            <div className="well">
+             Welcome
+             </div>
+            
+            </Typography>
+             {/* Dashboard */}
             <IconButton onClick={toggleDrawer}>
               <ChevronLeftIcon />
             </IconButton>
@@ -196,11 +212,11 @@ function DashboardContent() {
                 </Paper>
               </Grid>
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
-          </Container>
+          </Container><Copyright   sx={{ pt: 4 }} />
         </Box>
       </Box>
     </ThemeProvider>
+    
   );
 }
 

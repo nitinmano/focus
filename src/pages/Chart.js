@@ -9,15 +9,19 @@ function createData(time, amount) {
 }
 
 const data = [
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
+  createData('00', "00"),
+  createData('204', "01"),
+  createData('408', "02"),
+  createData('612', "03"),
+  createData('816', "04"),
+  createData('1020', "05"),
+  createData('1224', "06"),
+  createData('1428', "07"),
+  createData('1632', "08"),
+  createData('1836', "09"),
+  createData('2040', "10"),
+  createData('2244', "11"),
+  createData('2448', "12"),
 ];
 
 export default function Chart() {
@@ -25,9 +29,9 @@ export default function Chart() {
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>This Year</Title>
       <ResponsiveContainer>
-        <LineChart
+        <LineChart 
           data={data}
           margin={{
             top: 16,
@@ -37,11 +41,15 @@ export default function Chart() {
           }}
         >
           <XAxis
+            
             dataKey="time"
             stroke={theme.palette.text.secondary}
             style={theme.typography.body2}
           />
           <YAxis
+            scale="linear"
+            interval={0}
+            tickCount={6}
             stroke={theme.palette.text.secondary}
             style={theme.typography.body2}
           >
@@ -54,10 +62,10 @@ export default function Chart() {
                 ...theme.typography.body1,
               }}
             >
-              Sales ($)
             </Label>
           </YAxis>
           <Line
+
             isAnimationActive={false}
             type="monotone"
             dataKey="amount"

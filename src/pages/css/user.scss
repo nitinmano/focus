@@ -1,5 +1,7 @@
 $color:#343957;
-
+.Back{
+        background-color: #EFEFEF;
+};
 #submit {
     background-color: $color ;
 }
@@ -8,7 +10,18 @@ $color:#343957;
 }
 #margin{
     margin-top: 20px;
+    
 }
 #Appbar{
     background-color: $color;
+}
+.copyright{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.well{
+    left: 55%;
+    transform: translateX(-70%);
 }
